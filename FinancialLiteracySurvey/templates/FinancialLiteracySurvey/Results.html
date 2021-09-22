@@ -1,0 +1,14 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Result
+{% endblock %}
+
+{% block content %}
+    Number of correct answers: {{ correct }}
+
+    {% next_button %}
+{% endblock %}
+
+

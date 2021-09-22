@@ -1,0 +1,36 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Demographic Questionnaire
+    <img src="{% static 'finlit.png' %}" width="30%" style="float: right"/>
+{% endblock %}
+
+{% block content %}
+
+    {% if form.errors %}
+        <div class="alert alert-danger" role="alert">
+            <h6 class="alert-heading">{{ form.non_field_errors }}</h6>
+        </div>
+    {% endif %}
+
+    <p>Before we proceed, we would like you to answer a few background questions.</p>
+
+    {% formfields %} {# This helps include all formfields you have specified in pages.py #}
+{#    {% formfield player.birth_year %}#}
+{#    {% formfield player.gender %}#}
+{#    {% formfield player.education %}#}
+    {# Alternatively, you may specify one by one like {% formfield [formfield name] %}. #}
+
+    <br>
+
+    {% next_button %}
+
+    <style>
+        .otree-form-errors {
+            visibility: hidden;
+            display: none;
+        }
+    </style>
+
+{% endblock %}
